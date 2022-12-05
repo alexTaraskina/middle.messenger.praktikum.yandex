@@ -1,5 +1,11 @@
 {
+  "scripts": {
+    "dev": "parcel src/pages/index.hbs --no-cache",
+    "build": "aprcel build src/pages/index.hbs && node server.js"
+  },
   "devDependencies": {
-    "parcel": "^2.8.0"
+    "@anikin/parcel-transformer-handlebars": "^1.0.9",
+    "parcel": "^2.8.0",
+    "postcss-import": "^15.0.1"
   }
 }
