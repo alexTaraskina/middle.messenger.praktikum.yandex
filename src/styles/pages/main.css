@@ -6,3 +6,7 @@ main.error {
     justify-content: center;
     align-items: center;
 }
+
+main.chose-chat {
+    display: flex;
+}
