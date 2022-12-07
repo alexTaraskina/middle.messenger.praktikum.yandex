@@ -24,14 +24,6 @@
         padding: 7px 0;
     }
 
-    &__link {
-        color: $blue;
-        font-weight: 500;
-        font-size: 11px;
-        line-height: 11px;
-        text-decoration: none;
-    }
-
     &__button-wrapper {
         margin-bottom: 14px;
     }

@@ -3,5 +3,9 @@
 @import "colors";
 
 @import "./atoms/button.css";
+@import "./atoms/link.css";
+
 @import "./molecules/form.css";
+@import "./molecules/error.css";
+
 @import "./pages/main.css";

@@ -1,5 +1,6 @@
 main.login,
-main.signin {
+main.signin,
+main.error {
     display: flex;
     height: 100vh;
     justify-content: center;

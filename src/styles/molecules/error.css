@@ -1,0 +1,21 @@
+.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__number {
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 40px;
+        color: $dark-gray;
+        margin-bottom: 20px;
+    }
+
+    &__message {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 20px;
+        color: $dark-gray;
+        margin-bottom: 69px;
+    }
+}
