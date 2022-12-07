@@ -2,5 +2,6 @@
 @import "common";
 @import "colors";
 
-@import "../partials/atoms/button/button.css";
-@import "../partials/molecules/login-form/login-form.css";
+@import "./atoms/button.css";
+@import "./molecules/form.css";
+@import "./pages/main.css";
