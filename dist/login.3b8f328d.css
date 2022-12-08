@@ -438,7 +438,16 @@ button {
   height: 130px;
   background: #efefef;
   border-radius: 50%;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 87px;
+  display: flex;
+}
+
+.profile-card__avatar-icon {
+  width: 40px;
+  height: 40px;
+  background: url("default-image.1aa0cf88.svg") no-repeat;
 }
 
 main {
