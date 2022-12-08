@@ -8,6 +8,7 @@
 @import "./molecules/form.css";
 @import "./molecules/error.css";
 @import "./molecules/searchbox.css";
+@import "./molecules/message.css";
 @import "./molecules/chats.css";
 @import "./molecules/chat-area.css";
 @import "./molecules/chat-preview.css";

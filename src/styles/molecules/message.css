@@ -1,0 +1,37 @@
+.message {
+    width: fit-content;
+    max-width: 402px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: $nero;
+    border-radius: 12px;
+
+    &_type_sent {
+        align-self: flex-end;
+        background-color: $wizard-white;
+    }
+
+    &_content-type_text {
+        padding: 11px;
+
+        &.message_type_recieved {
+            border-radius: 0 12px 12px;
+            background-color: $guyabano;
+        }
+
+        &.message_type_sent {
+            border-radius: 12px 12px 0;
+        }
+    }
+}
+
+.message_type_recieved + .message_type_recieved,
+.message_type_sent + .message_type_sent {
+    margin-top: 10px;
+}
+
+.message_type_sent + .message_type_recieved,
+.message_type_recieved+ .message_type_sent {
+    margin-top: 30px;
+}

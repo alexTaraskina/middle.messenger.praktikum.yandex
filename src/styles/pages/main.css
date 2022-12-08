@@ -1,3 +1,7 @@
+main {
+    display: flex;
+}
+
 main.login,
 main.signin,
 main.error {
@@ -5,8 +9,4 @@ main.error {
     height: 100vh;
     justify-content: center;
     align-items: center;
-}
-
-main.chose-chat {
-    display: flex;
 }

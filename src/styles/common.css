@@ -3,3 +3,11 @@ body {
     font-style: normal;
     font-weight: 400;
 }
+
+a, button {
+    cursor: pointer;
+}
+
+button {
+    padding: 0;
+}

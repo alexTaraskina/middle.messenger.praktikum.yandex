@@ -5,6 +5,7 @@
     min-height: 100vh;
     border-right: 1px solid $whisper;
     padding: 21px 10px;
+    flex-shrink: 0;
 
     &__link {
         display: inline-block;
