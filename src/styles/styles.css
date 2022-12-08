@@ -4,6 +4,7 @@
 
 @import "./atoms/button.css";
 @import "./atoms/link.css";
+@import "./atoms/key-value-line.css";
 
 @import "./molecules/form.css";
 @import "./molecules/error.css";
@@ -12,5 +13,7 @@
 @import "./molecules/chats.css";
 @import "./molecules/chat-area.css";
 @import "./molecules/chat-preview.css";
+@import "./molecules/profile-card.css";
 
 @import "./pages/main.css";
+@import "./pages/profile-page.css";

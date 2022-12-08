@@ -1,0 +1,21 @@
+.key-value-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid $whisper;
+    width: 100%;
+
+    &__key {
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 13px;
+        color: $nero;
+    }
+
+    &__value {
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 13px;
+        color: $gray;
+    }
+}

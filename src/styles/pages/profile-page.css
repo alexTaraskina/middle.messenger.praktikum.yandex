@@ -1,0 +1,25 @@
+.profile-page {
+    display: flex;
+
+    &__go-back-area {
+        width: 64px;
+        height: 100vh;
+        background-color: $alabaster;
+        border-right: 1px solid $whisper;
+        flex-shrink: 0;
+    }
+
+    &__user-information-area {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    &__profile-card-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 510px
+    }
+}
