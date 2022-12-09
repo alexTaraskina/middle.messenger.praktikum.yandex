@@ -5,6 +5,7 @@
 @import "./atoms/button.css";
 @import "./atoms/link.css";
 @import "./atoms/key-value-line.css";
+@import "./atoms/form-input-group.css";
 
 @import "./molecules/form.css";
 @import "./molecules/error.css";
