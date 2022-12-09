@@ -18,11 +18,16 @@
         </div>
         <div class="chat-area__new-message-area">
             <button class="chat-area__attach-file-button">
-                <span class="chat-area__attach-file-icon">
+                <span class="chat-area__attach-file-icon"></span>
+                <div class="chat-area__file-type-options">
+                    {{> "atoms/file-type-option/file-type-option" optionText="Фото или Видео" fileType="photo" }}
+                    {{> "atoms/file-type-option/file-type-option" optionText="Файл" fileType="video" }}
+                    {{> "atoms/file-type-option/file-type-option" optionText="Локация" fileType="location" }}
+                </div>
             </button>
             <input type="text" id="message" name="message" class="chat-area__new-message" placeholder="Сообщение"/>
             <button class="chat-area__send-button">
-                <spab class="chat-area__send-icon"></spab>
+                <span class="chat-area__send-icon"></span>
             </button>
         </div>
     </div>

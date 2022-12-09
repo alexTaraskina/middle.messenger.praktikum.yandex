@@ -3,5 +3,7 @@
         type="{{type}}" 
         id="{{name}}" name="{{name}}"
         placeholder="{{placeholder}}" />
+    {{#if errorMessage}}
     <span class="form-input-group__error">{{errorMessage}}</span>
+    {{/if}}
 </div>
