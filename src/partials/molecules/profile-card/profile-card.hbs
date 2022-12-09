@@ -1,5 +1,12 @@
 <div class="profile-card">
-    <div class="profile-card__avatar"><span class="profile-card__avatar-icon"></span></div>
+    <div class="profile-card__avatar">
+        {{#if avatar}}
+        <img src="{{avatar}}" />
+        {{else}}
+        <span class="profile-card__avatar-icon"></span>
+        {{/if}}
+        <div class="profile-card__shadow"><span>Поменять аватар</span></div>
+    </div>
     <p class="profile-card__name">{{name}}</p>
     {{> "atoms/key-value-line/key-value-line" key="Почта" value="pochta@yandex.ru" }}
     {{> "atoms/key-value-line/key-value-line" key="Логин" value="ivanivanov" }}
