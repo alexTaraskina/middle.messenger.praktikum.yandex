@@ -1,0 +1,7 @@
+.searchbox {
+    width: 100%;
+    background-color: $whisper;
+    border: none;
+    border-radius: 5px;
+    height: 32px;
+}

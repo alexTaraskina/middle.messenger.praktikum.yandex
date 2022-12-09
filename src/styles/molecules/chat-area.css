@@ -1,0 +1,163 @@
+.chat-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 0 21px;
+
+    &_selected {
+        justify-content: space-between;
+    }
+
+    &__no-choosen-message {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 12px;
+        color: $gray;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px 0;
+        border-bottom: 1px solid $whisper;
+    }
+
+    &__actions-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        background: transparent;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    &__actions-icon {
+        width: 3px;
+        height: 15px;
+        background: url('~/src/assets/icons/actions.svg');
+        background-repeat: no-repeat;
+    }
+
+    &__recipient-info {
+        display: flex;
+        align-items: center;
+    }
+
+    &__recipient-avatar {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background-color: $white-smoke;
+        margin-right: 10px;
+    }
+
+    &__recipient-name {
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 13px;
+        color: $nero;
+    }
+
+    &__message {
+        width: fit-content;
+        max-width: 50%;
+
+    }
+
+    &__messages-date {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 12px;
+        color: $gray;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    &__main {
+        width: 100%;
+    }
+
+    &__dialog-area {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid $whisper;
+        padding: 30px 0;
+    }
+
+    &__attach-file-button {
+        width: 32px;
+        height: 32px;
+        background: none;
+        border: none;
+        padding: 0;
+        display: flex;
+        cursor: pointer;
+        margin-right: 10px;
+        position: relative;
+
+        &:hover {
+            .chat-area__file-type-options {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    &__file-type-options {
+        display: none;
+        position: absolute;
+        width: 162px;
+        height: 128px;
+        background: $white;
+        box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
+        border-radius: 12px;
+        top: calc(-128px - 22px);
+        padding: 15px;
+
+        &:hover {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+
+    &__new-message-area {
+        display: flex;
+        padding: 11px 0;
+    }
+
+    &__attach-file-icon {
+        background: url('~/src/assets/icons/attach-file.svg');
+        width: 100%;
+        height: 100%;
+    }
+
+    &__new-message {
+        flex: 1;
+        background-color: $white-smoke;
+        border-radius: 30px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 12px;
+        color: $gray;
+        padding: 0 20px;
+        border: none;
+        margin-right: 10px;
+    }
+
+    &__send-button {
+        display: flex;
+        width: 28px;
+        height: 28px;
+        background: $blue;
+        border: none;
+        border-radius: 50%;
+    }
+}
