@@ -2,11 +2,11 @@
 @import "common";
 @import "colors";
 
-@import "./atoms/button.css";
-@import "./atoms/link.css";
-@import "./atoms/key-value-line.css";
-@import "./atoms/form-input-group.css";
-@import "./atoms/file-type-option.css";
+@import "./components/button.css";
+@import "./components/link.css";
+@import "./components/key-value-line.css";
+@import "./components/form-input-group.css";
+@import "./components/file-type-option.css";
 
 @import "./molecules/form.css";
 @import "./molecules/error.css";
