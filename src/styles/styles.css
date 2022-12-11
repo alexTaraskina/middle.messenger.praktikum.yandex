@@ -8,15 +8,15 @@
 @import "./components/form-input-group.css";
 @import "./components/file-type-option.css";
 
-@import "./molecules/form.css";
-@import "./molecules/error.css";
-@import "./molecules/searchbox.css";
-@import "./molecules/message.css";
-@import "./molecules/chats.css";
-@import "./molecules/chat-area.css";
-@import "./molecules/chat-preview.css";
-@import "./molecules/profile-card.css";
-@import "./molecules/modal.css";
+@import "./modules/form.css";
+@import "./modules/error.css";
+@import "./modules/searchbox.css";
+@import "./modules/message.css";
+@import "./modules/chats.css";
+@import "./modules/chat-area.css";
+@import "./modules/chat-preview.css";
+@import "./modules/profile-card.css";
+@import "./modules/modal.css";
 
 @import "./pages/main.css";
 @import "./pages/profile-page.css";
