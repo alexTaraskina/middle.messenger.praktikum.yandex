@@ -45,4 +45,3 @@ document.addEventListener('DOMContentLoaded', function () {
         errorEl.classList.add(ClassNames.ERROR_VISIBLE);
     }
 })
-
