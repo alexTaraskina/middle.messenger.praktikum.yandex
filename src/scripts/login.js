@@ -8,23 +8,20 @@ document.addEventListener('DOMContentLoaded', function () {
     let adminLogin = 'admin';
     let adminPassword = 'admin'
     let loginForm = document.querySelector('#login-form');
+
+    if (!loginForm) {
+        return;
+    }
+    
     let loginEl = loginForm.querySelector('#login');
     let passwordEl = loginForm.querySelector('#password');
     let loginErrorEl = loginEl.nextElementSibling;
     let passwordErrorEl = passwordEl.nextElementSibling;
     let errorElements = [loginErrorEl, passwordErrorEl];
 
-    if (loginForm) {
-        loginForm.addEventListener('submit', (e) => onFormSubmit(e));
-    }
-
-    if (loginEl) {
-        loginEl.addEventListener('click', onInputClick);
-    }
-
-    if (passwordEl) {
-        passwordEl.addEventListener('click', onInputClick);
-    }
+    loginForm.addEventListener('submit', (e) => onFormSubmit(e));
+    loginEl.addEventListener('click', onInputClick);
+    passwordEl.addEventListener('click', onInputClick);
 
     function onInputClick() {
         errorElements.forEach(error => error.classList.remove(ClassNames.ERROR_VISIBLE));
