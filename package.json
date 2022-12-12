@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "parcel src/pages/index.hbs --no-cache",
+    "dev": "parcel src/pages/index.hbs --no-cache --open",
     "start": "parcel build src/pages/index.hbs && node server.js",
     "build": "parcel build src/pages/index.hbs"
   },
