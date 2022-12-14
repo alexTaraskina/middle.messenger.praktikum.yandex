@@ -1,0 +1,30 @@
+body {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+}
+
+button {
+    font-family: 'Inter';
+}
+
+a, button {
+    cursor: pointer;
+}
+
+button {
+    padding: 0;
+}
+
+main {
+    display: flex;
+}
+
+main.login,
+main.signin,
+main.error {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}

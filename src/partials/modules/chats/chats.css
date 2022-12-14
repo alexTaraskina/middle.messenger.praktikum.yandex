@@ -1,0 +1,28 @@
+.chats {
+    width: 310px;
+    background: $alabaster;
+    height: auto;
+    min-height: 100vh;
+    border-right: 1px solid $whisper;
+    padding: 21px 10px;
+    flex-shrink: 0;
+
+    &__link {
+        display: inline-block;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 12px;
+        color: $gray;
+        margin-bottom: 23px;
+    }
+
+    &__list {
+        margin-top: 14px;
+    }
+
+    &__navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+}
