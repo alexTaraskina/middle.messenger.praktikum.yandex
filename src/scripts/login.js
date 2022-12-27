@@ -2,29 +2,29 @@
 
 const ClassNames = {
     ERROR_VISIBLE: 'form-input-group__error_visible',
-}
+};
 
-document.addEventListener('DOMContentLoaded', function () {
-    let adminLogin = 'admin';
-    let adminPassword = 'admin'
-    let loginForm = document.querySelector('#login-form');
+document.addEventListener('DOMContentLoaded', () => {
+    const adminLogin = 'admin';
+    const adminPassword = 'admin';
+    const loginForm = document.querySelector('#login-form');
 
     if (!loginForm) {
         return;
     }
-    
-    let loginEl = loginForm.querySelector('#login');
-    let passwordEl = loginForm.querySelector('#password');
-    let loginErrorEl = loginEl.nextElementSibling;
-    let passwordErrorEl = passwordEl.nextElementSibling;
-    let errorElements = [loginErrorEl, passwordErrorEl];
 
-    loginForm.addEventListener('submit', (e) => onFormSubmit(e));
-    loginEl.addEventListener('click', onInputClick);
-    passwordEl.addEventListener('click', onInputClick);
+    const loginEl = loginForm.querySelector('#login');
+    const passwordEl = loginForm.querySelector('#password');
+    const loginErrorEl = loginEl.nextElementSibling;
+    const passwordErrorEl = passwordEl.nextElementSibling;
+    const errorElements = [loginErrorEl, passwordErrorEl];
 
     function onInputClick() {
-        errorElements.forEach(error => error.classList.remove(ClassNames.ERROR_VISIBLE));
+        errorElements.forEach((error) => error.classList.remove(ClassNames.ERROR_VISIBLE));
+    }
+
+    function showError(errorEl) {
+        errorEl.classList.add(ClassNames.ERROR_VISIBLE);
     }
 
     function onFormSubmit(e) {
@@ -35,10 +35,9 @@ document.addEventListener('DOMContentLoaded', function () {
         if (passwordEl.value !== adminPassword) {
             showError(passwordErrorEl);
         }
-
     }
 
-    function showError(errorEl) {
-        errorEl.classList.add(ClassNames.ERROR_VISIBLE);
-    }
-})
+    loginForm.addEventListener('submit', (e) => onFormSubmit(e));
+    loginEl.addEventListener('click', onInputClick);
+    passwordEl.addEventListener('click', onInputClick);
+});
