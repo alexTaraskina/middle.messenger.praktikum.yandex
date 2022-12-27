@@ -6,6 +6,8 @@
   },
   "devDependencies": {
     "@parcel/transformer-inline-string": "2.8.1",
+    "@typescript-eslint/eslint-plugin": "5.47.1",
+    "@typescript-eslint/parser": "5.47.1",
     "eslint": "8.30.0",
     "eslint-config-airbnb": "19.0.4",
     "parcel": "2.8.1",
