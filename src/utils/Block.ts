@@ -8,7 +8,7 @@ interface BlockMeta<P = any> {
 
 type Events = Values<typeof Block.EVENTS>;
 
-export default class Block<P = any> {
+export default class Block<P extends object = {}> {
   static EVENTS = {
     INIT: 'init',
     FLOW_CDM: 'flow:component-did-mount',
@@ -91,7 +91,7 @@ export default class Block<P = any> {
       return;
     }
 
-    Object.assign(this.props as {}, nextProps);
+    Object.assign(this.props, nextProps);
   };
 
   setState = (nextState: any) => {
