@@ -1,9 +1,10 @@
 import { Block } from '../../../utils';
 import template from 'bundle-text:./template.hbs';
 
-import './form-input-group.css';
+import './profile-card.css';
 
-export default class FormInputGroup extends Block {
+export default class ProfileCard extends Block {
     render() {
         return template;
+    }
 }

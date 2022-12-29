@@ -1,9 +1,10 @@
 import { Block } from '../../../utils';
 import template from 'bundle-text:./template.hbs';
 
-import './form-input-group.css';
+import './chat-preview.css';
 
-export default class FormInputGroup extends Block {
+export default class ChatPreview extends Block {
     render() {
         return template;
+    }
 }

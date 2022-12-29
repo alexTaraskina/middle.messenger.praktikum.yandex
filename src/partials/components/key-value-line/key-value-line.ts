@@ -1,9 +1,10 @@
 import { Block } from '../../../utils';
 import template from 'bundle-text:./template.hbs';
 
-import './form-input-group.css';
+import './key-value-line.css';
 
-export default class FormInputGroup extends Block {
+export default class KeyValueLine extends Block {
     render() {
         return template;
+    }
 }
