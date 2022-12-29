@@ -1,7 +1,9 @@
 import { Block } from '../../../utils';
 import template from 'bundle-text:./template.hbs';
 
-export default class LoginForm extends Block {
+import './error.css';
+
+export default class Error extends Block {
     render() {
         return template;
     }
