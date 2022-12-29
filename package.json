@@ -4,6 +4,9 @@
     "start": "parcel src/index.html --no-source-maps --no-cache",
     "build": "parcel build src/index.html"
   },
+  "alias": {
+    "utils": "./src/utils"
+  },
   "devDependencies": {
     "@parcel/transformer-inline-string": "2.8.1",
     "@typescript-eslint/eslint-plugin": "5.47.1",
