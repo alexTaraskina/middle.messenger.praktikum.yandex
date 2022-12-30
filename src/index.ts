@@ -1,6 +1,6 @@
 import './styles/styles.css';
 
-import { renderDOM, registerComponent } from  './utils';
+import { renderDOM, registerComponent } from  './core';
 
 import { Link } from './partials/components/link';
 import { Button } from './partials/components/button';

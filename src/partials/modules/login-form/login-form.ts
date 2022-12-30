@@ -1,5 +1,6 @@
-import { Block } from 'utils';
+import { Block } from 'core';
 import template from 'bundle-text:./template.hbs';
+import { validateForm, ValidateRuleType } from 'helpers/validateForm';
 
 interface LoginFormProps {
 }
@@ -34,6 +35,13 @@ export default class LoginForm extends Block<LoginFormProps> {
         }
 
         console.log(loginData);
+
+        const errorMessage = validateForm([
+            { type: ValidateRuleType.Login, value: loginEl?.value },
+            { type: ValidateRuleType.Password, value: passwordEl?.value }
+        ]);
+
+        console.log(errorMessage);
     }
 
     render() {

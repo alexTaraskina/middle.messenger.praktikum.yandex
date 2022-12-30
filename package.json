@@ -5,7 +5,9 @@
     "build": "parcel build src/index.html"
   },
   "alias": {
-    "utils": "./src/utils"
+    "core": "./src/core",
+    "pages": "./src/pages",
+    "helpers": "./src/helpers"
   },
   "devDependencies": {
     "@parcel/transformer-inline-string": "2.8.1",
