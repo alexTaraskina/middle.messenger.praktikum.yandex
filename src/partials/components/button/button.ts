@@ -10,7 +10,7 @@ interface ButtonProps {
     }
 }
 
-export default class Button extends Block {
+export default class Button extends Block<ButtonProps> {
     static componentName: string = 'Button';
 
     constructor(props: ButtonProps) {

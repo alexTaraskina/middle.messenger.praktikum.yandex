@@ -4,6 +4,8 @@ import { renderDOM, registerComponent } from  './core';
 
 import { Link } from './partials/components/link';
 import { Button } from './partials/components/button';
+import { Input } from 'partials/components/input';
+import { FormError } from 'partials/components/form-error';
 import { FormInputGroup } from './partials/components/form-input-group';
 import { FileTypeOption } from './partials/components/file-type-option';
 import { KeyValueLine } from './partials/components/key-value-line';
@@ -31,6 +33,8 @@ import { Main } from './pages/main';
 
 registerComponent(Link);
 registerComponent(Button);
+registerComponent(Input);
+registerComponent(FormError);
 registerComponent(FormInputGroup);
 registerComponent(FileTypeOption);
 registerComponent(KeyValueLine);

@@ -1,32 +1,73 @@
-import { Login } from "pages/login";
+export type ValidateRuleType = 'login' | 'password' | 'email' | 'text' | 'phone';
 
-export enum ValidateRuleType {
-    Login = 'login',
-    Password = 'password',
-}
-
-type ValidateRules = {
+type ValidateRule = {
     value: string,
     type: ValidateRuleType,
 }
 
-export function validateForm(rules: ValidateRules[]) {
-    let errorMessage = '';
+const validatorsMap = new Map<ValidateRuleType, (value: string) => string>([
+    ['login', validateLogin],
+    ['password', validatePassword]
+]);
 
-    for(let i = 0; i < rules.length; i++) {
-        const { type, value } = rules[i];
+export function validateForm({ type, value }: ValidateRule): string {
+    const onlyLettersRegexp = /^[A-ZА-ЯЁ]+$/i;
+    const mobilePhoneRegexp = /^(\+?7|8)?9\d{9}$/;
+    const emailRegexp = /^(.+)@(.+)\.(.+)$/;
 
-        if (type === ValidateRuleType.Login) {
-            if (value.length === 0) {
-                errorMessage = 'Login can not be empty';
-                break;
-            }
-            else if (value.length < 4) {
-                errorMessage = 'Login should contains more than 3 letters';
-                break;
-            }
-        }
+    const validator = validatorsMap.get(type);
+    return validator ? validator(value) : '';
+}
+
+function validateLogin(value: string) {
+    let error = generalStringValidation(value, 4);
+
+    if (error) {
+        return error;
     }
 
-    return errorMessage;
-} 
+    return '';
+}
+
+function validatePassword(value:  string) {
+    let error = generalStringValidation(value, 8);
+
+    if (error) {
+        return error;
+    }
+
+    // {8,}                        от 8 символов
+    // {8,20}                      от 8 до 20 символов
+    // (?=.*\d)                    минимум одна цифра
+    // (?=.*[a-z])                 минимум одна буква в нижнем регистре
+    // (?=.*[A-Z])                 минимум одна буква в верхнем регистре
+    // (?=.*[-#!$@%^&*_+~=:;?\/])  минимум один символ из набора
+    const oneDijitRegexp = /\d/;
+    const lowerCaseRegexp = /[a-z]/;
+    const upperCaseRegexp = /[A-Z]/;
+    const symbolRegexp = /[-#!$@%^&*_+~=:;?\/]/;
+
+    if(!oneDijitRegexp.test(value)) {
+        return 'Password should contain at least 1 number';
+    } 
+    else if (!lowerCaseRegexp.test(value)) {
+        return 'Password should contain at least 1 letter in lower case';
+    } 
+    else if (!upperCaseRegexp.test(value)) {
+        return 'Password should contain at least 1 letter in upper case';
+    }
+    else if (!symbolRegexp.test(value)) {
+        return 'Pasword should contain at least 1 symbol';
+    }
+
+    return '';
+}
+
+function generalStringValidation(value: string, minLettersCount: number) {
+    if (value.length === 0) {
+        return 'Login can not be empty';
+    }
+    else if (value.length < minLettersCount) {
+        return `Login should contains more than ${minLettersCount - 1} letters`;
+    }
+}

@@ -1,6 +1,6 @@
 import { Block } from 'core';
 import template from 'bundle-text:./template.hbs';
-import { validateForm, ValidateRuleType } from 'helpers/validateForm';
+import { validateForm } from 'helpers/validateForm';
 
 interface LoginFormProps {
 }
@@ -9,13 +9,13 @@ export default class LoginForm extends Block<LoginFormProps> {
     static componentName: string = 'LoginForm';
 
     constructor(props: LoginFormProps) {
-        super(props);
-
-        this.setProps({
+        super({
+            ...props,
             events: {
-                submit: (event: MouseEvent) => this.onSubmit(event)
-            }
+                submit: (event: MouseEvent) => this.onSubmit(event),
+            },
         });
+
     }
 
     onSubmit(event: MouseEvent) {
@@ -36,12 +36,11 @@ export default class LoginForm extends Block<LoginFormProps> {
 
         console.log(loginData);
 
-        const errorMessage = validateForm([
-            { type: ValidateRuleType.Login, value: loginEl?.value },
-            { type: ValidateRuleType.Password, value: passwordEl?.value }
-        ]);
+        const loginError = validateForm({ type: 'login', value: loginEl.value });
+        this.refs.loginInputGroup.refs.formError.setProps({ text: loginError });
 
-        console.log(errorMessage);
+        const passwordError = validateForm({ type: 'password', value: passwordEl.value });
+        this.refs.passwordInputGroup.refs.formError.setProps({ text: passwordError });
     }
 
     render() {
