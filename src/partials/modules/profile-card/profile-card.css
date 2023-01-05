@@ -37,15 +37,10 @@
         color: var(--white);
         justify-content: center;
         align-items: center;
-
-        span {
-            max-width: 64px;
-            text-align: center;
-        }
     }
 
     &__avatar-icon {
-        background: url('~/static/assets/icons/default-image.svg');
+        background: url("~/static/assets/icons/default-image.svg");
         width: 40px;
         height: 40px;
         background-repeat: no-repeat;
