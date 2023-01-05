@@ -1,5 +1,6 @@
 import { Block } from '../../../core';
 import template from 'bundle-text:./template.hbs';
+import { validateForm } from 'helpers/validateForm';
 
 interface RegisterFormProps {
 
@@ -9,12 +10,11 @@ export default class RegisterForm extends Block<RegisterFormProps> {
     static componentName: string = 'RegisterForm';
 
     constructor(props: RegisterFormProps) {
-        super(props);
-
-        this.setProps({
+        super({
+            ...props,
             events: {
-                submit: (event: MouseEvent) => this.onSubmit(event)
-            }
+                submit: (event: MouseEvent) => this.onSubmit(event),
+            },
         });
     }
 
@@ -47,6 +47,24 @@ export default class RegisterForm extends Block<RegisterFormProps> {
         }
 
         console.log(registerData);
+
+        const loginError = validateForm({ type: 'login', value: loginEl.value });
+        this.refs.loginInputGroup.refs.formError.setProps({ text: loginError });
+
+        const emailError = validateForm({ type: 'email', value: emailEl.value });
+        this.refs.emailInputGroup.refs.formError.setProps({ text: emailError });
+
+        const nameError = validateForm({ type: 'text', value: firstNameEl.value });
+        this.refs.nameInputGroup.refs.formError.setProps({ text: nameError });
+
+        const secondNameError = validateForm({ type: 'text', value: secondNameEl.value });
+        this.refs.secondNameInputGroup.refs.formError.setProps({ text: secondNameError });
+
+        const phoneError = validateForm({ type: 'phone', value: phoneEl.value });
+        this.refs.phoneInputGroup.refs.formError.setProps({ text: phoneError });
+
+        const passwordError = validateForm({ type: 'password', value: passwordEl.value });
+        this.refs.passwordInputGroup.refs.formError.setProps({ text: passwordError });
     }
     
     render() {

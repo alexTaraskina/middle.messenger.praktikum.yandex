@@ -15,7 +15,6 @@ export default class LoginForm extends Block<LoginFormProps> {
                 submit: (event: MouseEvent) => this.onSubmit(event),
             },
         });
-
     }
 
     onSubmit(event: MouseEvent) {
