@@ -14,5 +14,6 @@
     "noUnusedParameters": true,
     "sourceMap": true,
     "strictNullChecks": true,
-  }
+  },
+  "includes": ["**/*.ts?"]
 }
