@@ -1,7 +1,9 @@
 {
-    "extends": "stylelint-config-standard",
     "plugins": [
         "stylelint-scss"
+    ],
+    "extends": [
+        "stylelint-config-standard-scss"
     ],
     "rules": {
         "color-hex-case": "lower",
@@ -10,7 +12,7 @@
     },
     "ignoreFiles": [
         [
-            "dist/**/*.css"
+            "dist/*"
         ]
     ]
 }
