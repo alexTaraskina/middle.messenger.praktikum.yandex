@@ -1,13 +1,41 @@
 <form class="form form_type_register">
     <div class="form__top-content">
         <h1 class="form__heading">Регистрация</h1>
-        {{{ FormInputGroup type="email" id="email" name="email" placeholder="Почта" cssModificator="form__input-group" }}}
-        {{{ FormInputGroup type="text" id="login" name="login" placeholder="Логин" cssModificator="form__input-group" }}}
-        {{{ FormInputGroup type="text" id="firstName" name="first_name" placeholder="Имя" cssModificator="form__input-group" }}}
-        {{{ FormInputGroup type="text" id="secondName" name="second_name" placeholder="Фамилия" cssModificator="form__input-group" }}}
-        {{{ FormInputGroup type="tel" id="phone" name="phone" placeholder="Телефон" cssModificator="form__input-group" }}}
-        {{{ FormInputGroup type="password" name="password" name="password" placeholder="Пароль" cssModificator="form__input-group" }}}
-        {{{ FormInputGroup type="password" name="password_repeat" placeholder="Пароль (ещё раз)" cssModificator="form__input-group" }}}
+        {{{ FormInputGroup 
+            type="email" id="email" name="email" 
+            placeholder="Почта" 
+            cssModificator="form__input-group"
+            validationType="email" }}}
+        {{{ FormInputGroup 
+            type="text" id="login" name="login" 
+            placeholder="Логин" 
+            cssModificator="form__input-group"
+            validationType="login" }}}
+        {{{ FormInputGroup 
+            type="text" id="firstName" name="first_name" 
+            placeholder="Имя" 
+            cssModificator="form__input-group" 
+            validationType="text" }}}
+        {{{ FormInputGroup 
+            type="text" id="secondName" name="second_name" 
+            placeholder="Фамилия" 
+            cssModificator="form__input-group"
+            validationType="text" }}}
+        {{{ FormInputGroup 
+            type="tel" id="phone" name="phone" 
+            placeholder="Телефон" 
+            cssModificator="form__input-group" 
+            validationType="phone" }}}
+        {{{ FormInputGroup 
+            type="password" name="password" name="password" 
+            placeholder="Пароль" 
+            cssModificator="form__input-group"
+            validationType="password" }}}
+        {{{ FormInputGroup 
+            type="password" name="password_repeat" 
+            placeholder="Пароль (ещё раз)" 
+            cssModificator="form__input-group"
+            validationType="password-repeat" }}}
     </div>
     <div class="form__bottom-content">
         <div class="form__button-wrapper">

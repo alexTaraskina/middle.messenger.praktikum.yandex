@@ -1,4 +1,4 @@
-export type ValidateRuleType = 'login' | 'password' | 'email' | 'text' | 'phone';
+export type ValidateRuleType = 'login' | 'password' | 'email' | 'text' | 'phone' | 'password-repeat';
 
 type ValidateRule = {
     value: string,
