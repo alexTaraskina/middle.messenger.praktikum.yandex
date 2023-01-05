@@ -7,19 +7,20 @@ type ValidateRule = {
 
 const validatorsMap = new Map<ValidateRuleType, (value: string) => string>([
     ['login', validateLogin],
-    ['password', validatePassword]
+    ['password', validatePassword],
+    ['email', validateEmail],
+    ['phone', validatePhone]
 ]);
 
 export function validateForm({ type, value }: ValidateRule): string {
     const onlyLettersRegexp = /^[A-ZА-ЯЁ]+$/i;
     const mobilePhoneRegexp = /^(\+?7|8)?9\d{9}$/;
-    const emailRegexp = /^(.+)@(.+)\.(.+)$/;
 
     const validator = validatorsMap.get(type);
     return validator ? validator(value) : '';
 }
 
-function validateLogin(value: string) {
+function validateLogin(value: string): string {
     let error = generalStringValidation(value, 4);
 
     if (error) {
@@ -29,7 +30,7 @@ function validateLogin(value: string) {
     return '';
 }
 
-function validatePassword(value:  string) {
+function validatePassword(value:  string): string {
     let error = generalStringValidation(value, 8);
 
     if (error) {
@@ -63,11 +64,37 @@ function validatePassword(value:  string) {
     return '';
 }
 
+function validateEmail(value: string): string {
+    if (value.length === 0) {
+        return 'Value can not be empty';
+    }
+
+    const emailRegexp = /^(.+)@(.+)\.(.+)$/;
+    if (!emailRegexp.test(value)) {
+        return 'e-mail is incorrect';
+    }
+
+    return '';
+}
+
+function validatePhone(value: string): string {
+    if (value.length === 0) {
+        return 'Value can not be empty';
+    }
+
+    const mobilePhoneRegexp = /^(\+?7|8)?9\d{9}$/;
+    if (!mobilePhoneRegexp.test(value)) {
+        return 'Phone format is +79xxxxxxxxx or 89xxxxxxxxx';
+    }
+
+    return '';
+}
+
 function generalStringValidation(value: string, minLettersCount: number) {
     if (value.length === 0) {
-        return 'Login can not be empty';
+        return 'Value can not be empty';
     }
     else if (value.length < minLettersCount) {
-        return `Login should contains more than ${minLettersCount - 1} letters`;
+        return `Value should contains more than ${minLettersCount - 1} letters`;
     }
 }
