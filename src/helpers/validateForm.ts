@@ -9,13 +9,11 @@ const validatorsMap = new Map<ValidateRuleType, (value: string) => string>([
     ['login', validateLogin],
     ['password', validatePassword],
     ['email', validateEmail],
-    ['phone', validatePhone]
+    ['phone', validatePhone],
+    ['text', validateText]
 ]);
 
 export function validateForm({ type, value }: ValidateRule): string {
-    const onlyLettersRegexp = /^[A-ZА-ЯЁ]+$/i;
-    const mobilePhoneRegexp = /^(\+?7|8)?9\d{9}$/;
-
     const validator = validatorsMap.get(type);
     return validator ? validator(value) : '';
 }
@@ -90,11 +88,23 @@ function validatePhone(value: string): string {
     return '';
 }
 
-function generalStringValidation(value: string, minLettersCount: number) {
+function validateText(value: string): string {
+    let error = generalStringValidation(value, 4);
+
+    if (error) {
+        return error;
+    }
+
+    return '';
+}
+
+function generalStringValidation(value: string, minLettersCount: number): string {
     if (value.length === 0) {
         return 'Value can not be empty';
     }
     else if (value.length < minLettersCount) {
         return `Value should contains more than ${minLettersCount - 1} letters`;
     }
+
+    return '';
 }
