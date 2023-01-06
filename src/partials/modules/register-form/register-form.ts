@@ -54,10 +54,10 @@ export default class RegisterForm extends Block<RegisterFormProps> {
         const emailError = validateForm({ type: 'email', value: emailEl.value });
         this.refs.emailInputGroup.refs.formError.setProps({ text: emailError });
 
-        const nameError = validateForm({ type: 'text', value: firstNameEl.value });
+        const nameError = validateForm({ type: 'name', value: firstNameEl.value });
         this.refs.nameInputGroup.refs.formError.setProps({ text: nameError });
 
-        const secondNameError = validateForm({ type: 'text', value: secondNameEl.value });
+        const secondNameError = validateForm({ type: 'name', value: secondNameEl.value });
         this.refs.secondNameInputGroup.refs.formError.setProps({ text: secondNameError });
 
         const phoneError = validateForm({ type: 'phone', value: phoneEl.value });

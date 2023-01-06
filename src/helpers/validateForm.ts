@@ -1,4 +1,4 @@
-export type ValidateRuleType = 'login' | 'password' | 'email' | 'text' | 'phone' | 'password-repeat';
+export type ValidateRuleType = 'login' | 'password' | 'email' | 'name' | 'phone' | 'password-repeat';
 
 type ValidateRule = {
     value: string,
@@ -10,7 +10,7 @@ const validatorsMap = new Map<ValidateRuleType, (value: string) => string>([
     ['password', validatePassword],
     ['email', validateEmail],
     ['phone', validatePhone],
-    ['text', validateText]
+    ['name', validateName]
 ]);
 
 export function validateForm({ type, value }: ValidateRule): string {
@@ -42,8 +42,8 @@ function validatePassword(value:  string): string {
     // (?=.*[A-Z])                 минимум одна буква в верхнем регистре
     // (?=.*[-#!$@%^&*_+~=:;?\/])  минимум один символ из набора
     const oneDijitRegexp = /\d/;
-    const lowerCaseRegexp = /[a-z]/;
-    const upperCaseRegexp = /[A-Z]/;
+    const lowerCaseRegexp = /[a-zа-яё]/;
+    const upperCaseRegexp = /[A-ZА-ЯёЁ]/;
     const symbolRegexp = /[-#!$@%^&*_+~=:;?\/]/;
 
     if(!oneDijitRegexp.test(value)) {
@@ -88,11 +88,19 @@ function validatePhone(value: string): string {
     return '';
 }
 
-function validateText(value: string): string {
-    let error = generalStringValidation(value, 4);
+function validateName(value: string): string {
+    if (value.length === 0) {
+        return 'Value can not be empty';
+    }
+    
+    const nameRegexp = /^[а-яА-ЯёЁa-zA-Z-]+$/;
+    const upperCaseRegexp =  /^[А-ЯЁA-Z]{1}[а-яА-ЯёЁa-zA-Z-]*$/;
 
-    if (error) {
-        return error;
+    if (!nameRegexp.test(value)) {
+        return "Value should contain only letters and \"-\" symbol";
+    }
+    else if (!upperCaseRegexp.test(value)) {
+        return "Value should start from a letter in upper case";
     }
 
     return '';
