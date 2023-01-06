@@ -19,10 +19,23 @@ export function validateForm({ type, value }: ValidateRule): string {
 }
 
 function validateLogin(value: string): string {
-    let error = generalStringValidation(value, 4);
+    let error = generalStringValidation(value, 3);
 
     if (error) {
         return error;
+    }
+
+    if (value.length > 20) {
+        return "Login can contain only 20 symbols";
+    }
+
+    const loginRegexp = /^[0-9a-zA-Z-_]+$/;
+    const onlyNumbersRegexp = /^[0-9]+$/;
+    if (onlyNumbersRegexp.test(value)) {
+        return "Login shouldn't contain only from numbers"
+    }
+    else if (!loginRegexp.test(value)) {
+        return "Login should contain only latin symbols, \"-\", \"_\"";
     }
 
     return '';
@@ -68,8 +81,12 @@ function validateEmail(value: string): string {
     }
 
     const emailRegexp = /^(.+)@(.+)\.(.+)$/;
+    const latinRegexp = /^[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]+$/;
     if (!emailRegexp.test(value)) {
         return 'e-mail is incorrect';
+    }
+    else if (!latinRegexp.test(value)) {
+        return 'Email should contain only latin symbols'
     }
 
     return '';
