@@ -32,8 +32,8 @@ export default class RegisterForm extends Block<RegisterFormProps> {
 
         const emailEl = this.element?.querySelector('#email') as HTMLInputElement;
         const loginEl = this.element?.querySelector('#login') as HTMLInputElement;
-        const firstNameEl = this.element?.querySelector('#firstName') as HTMLInputElement;
-        const secondNameEl = this.element?.querySelector('#secondName') as HTMLInputElement;
+        const firstNameEl = this.element?.querySelector('#first_name') as HTMLInputElement;
+        const secondNameEl = this.element?.querySelector('#second_name') as HTMLInputElement;
         const phoneEl = this.element?.querySelector('#phone') as HTMLInputElement;
         const passwordEl = this.element?.querySelector('#password') as HTMLInputElement;
 
