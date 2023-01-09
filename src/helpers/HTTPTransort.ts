@@ -19,26 +19,28 @@ function queryStringify(data: unknown) {
 }
 
 type Options = {
-  method: string,
+  method?: string,
   data?: {},
   headers?: Map<string, string>,
-  timeout: number,
+  timeout?: number,
 }
 
+type HTTPMethod = (url: string, options?: Options) => Promise<unknown>
+
 export default class HTTPTransport {
-  get = (url: string, options: Options) => {
+  get: HTTPMethod = (url, options = {}) => {
     return this.request(url + queryStringify(options.data), { ...options, method: METHODS.GET }, options.timeout);
   };
 
-  put = (url: string, options: { data?: {}, timeout: number } = { timeout: 5000 }) => {
+  put: HTTPMethod = (url, options = { timeout: 5000 }) => {
     return this.request(url, { ...options, method: METHODS.PUT }, options.timeout);
   };
 
-  post = (url: string, options: Options) => {
+  post: HTTPMethod = (url, options = {}) => {
     return this.request(url, { ...options, method: METHODS.POST }, options.timeout);
   };
 
-  delete = (url: string, options: Options) => {
+  delete: HTTPMethod = (url, options = {}) => {
     return this.request(url, { ...options, method: METHODS.DELETE }, options.timeout);
   };
 
