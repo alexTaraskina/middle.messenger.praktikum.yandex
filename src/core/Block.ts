@@ -60,7 +60,7 @@ export default class Block<P extends object = {}> {
     this._element = this._createDocumentElement('div');
   }
 
-  protected getStateFromProps(props: any): void {
+  protected getStateFromProps(props: P): void {
     this.state = {};
   }
 
@@ -137,7 +137,7 @@ export default class Block<P extends object = {}> {
     return this.element!;
   }
 
-  _makePropsProxy(props: any): any {
+  _makePropsProxy(props: P): any {
     // Можно и так передать this
     // Такой способ больше не применяется с приходом ES6+
     const self = this;
