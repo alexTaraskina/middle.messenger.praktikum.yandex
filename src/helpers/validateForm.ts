@@ -48,6 +48,10 @@ function validatePassword(value:  string): string {
         return error;
     }
 
+    if (value.length > 40) {
+        return "Password length should be lower then 40";
+    }
+
     // {8,}                        от 8 символов
     // {8,20}                      от 8 до 20 символов
     // (?=.*\d)                    минимум одна цифра
@@ -81,12 +85,12 @@ function validateEmail(value: string): string {
     }
 
     const emailRegexp = /^(.+)@(.+)\.(.+)$/;
-    const latinRegexp = /^[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]+$/;
+    const latinRegexp = /^[a-zA-Z-_]+@[a-zA-Z-_]+\.[a-zA-Z]+$/;
     if (!emailRegexp.test(value)) {
         return 'e-mail is incorrect';
     }
     else if (!latinRegexp.test(value)) {
-        return 'Email should contain only latin symbols'
+        return 'Email should contain only latin symbols, \"-\", \"_\"'
     }
 
     return '';

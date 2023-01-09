@@ -14,13 +14,13 @@ button {
     cursor: pointer;
 }
 
-main {
+.page {
     display: flex;
 }
 
-main.login,
-main.signin,
-main.error {
+div.login,
+div.signin,
+div.error {
     display: flex;
     height: 100vh;
     justify-content: center;
